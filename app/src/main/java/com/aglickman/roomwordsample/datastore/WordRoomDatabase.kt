@@ -8,7 +8,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Word::class), version = 1, exportSchema = false)
+@Database(entities = [Word::class], version = 1, exportSchema = false)
 abstract class WordRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
@@ -29,7 +29,7 @@ abstract class WordRoomDatabase : RoomDatabase() {
         suspend fun populateDatabase(wordDao: WordDao) {
 
             // Delete all content here.
-            wordDao.deleteAll()
+            //wordDao.deleteAll()
 
             // Add sample words.
             var word = Word("Hello")
